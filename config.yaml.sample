@@ -1,0 +1,8 @@
+host: iot.eclipse.org
+port: 1883
+use_auth: false
+username: username
+password: password
+subscribe_topic: ifttt-webhook/post
+ifttt_webhook_key: see also...https://ifttt.com/maker_webhooks
+ifttt_webhook_event: webhook event name

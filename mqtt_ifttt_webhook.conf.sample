@@ -1,0 +1,23 @@
+;
+; mqtt_ifttt_webhook.conf - for supervisord configuration file
+;
+; install
+;     $ sudo apt install supervisor
+;     $ sudo cp mqtt_ifttt_webhook.conf.sample /etc/supervisor/conf.d/mqtt_ifttt_webhook.conf
+;     $ sudo vi /etc/supervisor/conf.d/mqtt_ifttt_webhook.conf
+;       (fix path, etc...)
+;     $ sudo supervisorctl update && sudo supervisorctl status
+;
+[program:mqtt_ifttt_webhook]
+command                 = /usr/bin/ruby ./mqtt_ifttt_webhook.rb
+directory               = /home/test/work/mqtt_ifttt_webhook/
+user                    = test
+numprocs                = 1
+autostart               = true
+autorestart             = true
+redirect_stderr         = true
+stdout_logfile          = /home/test/work/mqtt_ifttt_webhook/log.txt
+startsecs               = 1
+startretries            = 10
+stdout_logfile_maxbytes = 1MB
+stdout_logfile_backups  = 1
